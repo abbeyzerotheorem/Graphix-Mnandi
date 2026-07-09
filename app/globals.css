@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====================================================================
+   Theme tokens — single source of CSS truth.
+   Light + dark palettes. Dark is the default experience.
+   ==================================================================== */
+@layer base {
+  :root {
+    --bg: 11 11 11;        /* #0B0B0B */
+    --bg-soft: 22 22 22;   /* #161616 */
+    --bg-elev: 28 28 30;
+    --line: 38 38 38;
+    --fg: 245 242 236;     /* #F5F2EC warm off-white */
+    --fg-dim: 191 185 174;
+    --fg-mute: 130 124 114;
+    --accent: 124 58 237;  /* #7C3AED violet */
+    --accent-glow: 159 107 255;
+    --accent-2: 6 182 212; /* #06B6D4 cyan */
+    --warm: 245 199 106;   /* #F5C76A amber */
+    --radius-card: 1.25rem;
+  }
+
+  .light {
+    --bg: 245 242 236;
+    --bg-soft: 255 255 255;
+    --bg-elev: 255 255 255;
+    --line: 220 215 205;
+    --fg: 11 11 11;
+    --fg-dim: 60 60 60;
+    --fg-mute: 110 105 95;
+    --accent: 124 58 237;
+    --accent-glow: 109 40 217;
+    --accent-2: 8 145 178;
+    --warm: 200 150 50;
+  }
+
+  * {
+    border-color: rgb(var(--line) / 1);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Focus ring — visible, opinionated. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.9);
+    color: white;
+  }
+
+  /* Better default scrollbar in dark mode. */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: rgb(var(--bg)); }
+  ::-webkit-scrollbar-thumb { background: rgb(var(--line)); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgb(var(--accent)); }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-[960px] px-5 sm:px-8;
+  }
+
+  /* Hairline section divider with optional eyebrow label. */
+  .rule {
+    @apply h-px w-full bg-[rgb(var(--line))];
+  }
+
+  /* Eyebrow label, used at the top of every section. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[rgb(var(--fg-mute))];
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 bg-[rgb(var(--accent))];
+  }
+
+  .display-xl { @apply font-display text-display-xl font-medium text-[rgb(var(--fg))]; }
+  .display-lg { @apply font-display text-display-lg font-medium text-[rgb(var(--fg))]; }
+  .display-md { @apply font-display text-display-md font-medium text-[rgb(var(--fg))]; }
+  .display-sm { @apply font-display text-display-sm font-medium text-[rgb(var(--fg))]; }
+
+  .lede {
+    @apply text-lg sm:text-xl leading-relaxed text-[rgb(var(--fg-dim))] max-w-[60ch];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full
+      px-6 py-3 text-sm font-medium tracking-tight
+      transition-[transform,background-color,color,box-shadow] duration-300 ease-out
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--accent))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))];
+  }
+  .btn-primary {
+    @apply btn bg-[rgb(var(--accent))] text-white shadow-[0_8px_30px_-12px_rgb(var(--accent)/0.7)]
+      hover:bg-[rgb(var(--accent-glow))] hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn border border-[rgb(var(--line))] text-[rgb(var(--fg))]
+      hover:border-[rgb(var(--accent))] hover:text-[rgb(var(--accent))];
+  }
+  .btn-text {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(var(--fg))]
+      hover:text-[rgb(var(--accent))] transition-colors duration-200;
+  }
+
+  /* Card */
+  .card {
+    @apply relative overflow-hidden rounded-3xl border border-[rgb(var(--line))]
+      bg-[rgb(var(--bg-soft))] transition-colors duration-300;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply relative py-20 sm:py-28 lg:py-36;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+  }
+
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+            mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(var(--line) / 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.6) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* Cursor-aware button: large inner blob that follows pointer within the button. */
+  .btn-cursor {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-cursor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(var(--accent) / 0.25), transparent 40%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    pointer-events: none;
+  }
+  .btn-cursor:hover::after { opacity: 1; }
+
+  /* Display type — slight optical adjustment. */
+  .display-xl, .display-lg, .display-md, .display-sm {
+    font-feature-settings: "ss01", "ss02";
+  }
+}
+
+/* Respect reduced motion globally. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
