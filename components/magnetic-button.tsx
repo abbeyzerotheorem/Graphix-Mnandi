@@ -14,6 +14,7 @@ export function MagneticButton({
   className,
   href,
   external,
+  type,
   ...rest
 }: {
   children: ReactNode;
@@ -21,6 +22,7 @@ export function MagneticButton({
   className?: string;
   href?: string;
   external?: boolean;
+  type?: "button" | "submit" | "reset";
 } & Omit<LinkProps, "href">) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
@@ -59,6 +61,7 @@ export function MagneticButton({
         onPointerLeave={onLeave}
         className={cls}
         style={{ x: tx, y: ty }}
+        type={type ?? "button"}
       >
         {children}
       </motion.button>
