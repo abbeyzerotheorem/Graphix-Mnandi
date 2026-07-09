@@ -15,10 +15,10 @@
     --fg: 245 242 236;     /* #F5F2EC warm off-white */
     --fg-dim: 191 185 174;
     --fg-mute: 130 124 114;
-    --accent: 124 58 237;  /* #7C3AED violet */
-    --accent-glow: 159 107 255;
-    --accent-2: 6 182 212; /* #06B6D4 cyan */
-    --warm: 245 199 106;   /* #F5C76A amber */
+    --accent: 242 158 0;   /* #F29E00 gold */
+    --accent-glow: 255 184 51;
+    --accent-2: 224 138 0; /* #E08A00 deep gold */
+    --warm: 255 184 51;    /* #FFB833 warm glow */
     --radius-card: 1.25rem;
   }
 
@@ -30,10 +30,10 @@
     --fg: 11 11 11;
     --fg-dim: 60 60 60;
     --fg-mute: 110 105 95;
-    --accent: 124 58 237;
-    --accent-glow: 109 40 217;
-    --accent-2: 8 145 178;
-    --warm: 200 150 50;
+    --accent: 242 158 0;
+    --accent-glow: 255 184 51;
+    --accent-2: 230 140 0;
+    --warm: 255 200 80;
   }
 
   * {

@@ -109,9 +109,9 @@ export const colors = {
   ink: "#0B0B0B",
   inkSoft: "#161616",
   cream: "#F5F2EC",
-  violet: "#7C3AED",
-  cyan: "#06B6D4",
-  amber: "#F5C76A",
+  accent: "#F29E00",
+  accentGlow: "#FFB833",
+  amber: "#E08A00",
 } as const;
 
 // ---------------------------------------------------------------------
@@ -127,8 +127,8 @@ export const hero = {
   secondaryCta: { label: "View our work", href: "#work" },
   // A high-quality Unsplash image — easy to swap for any client.
   image: {
-    src: "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=1600&q=80",
-    alt: "Abstract 3D render of a violet glass sculpture against a warm studio background",
+    src: "/placeholder.jpg",
+    alt: "Graphix Mnandi studio showcase",
   },
   stats: [
     { value: "120+", label: "Projects shipped" },
@@ -261,9 +261,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Meridian Capital",
     category: "Branding",
     year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1400&q=80",
-    alt: "A deep violet and black brand identity with constellation-like geometric marks",
+    image: "/placeholder.jpg",
+    alt: "Meridian brand identity project",
     span: "wide",
   },
   {
@@ -272,9 +271,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Lumen Festival",
     category: "Flyers",
     year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
-    alt: "A bold typographic event flyer with violet gradient and oversized display type",
+    image: "/placeholder.jpg",
+    alt: "Lumen Festival event flyer project",
     span: "tall",
   },
   {
@@ -283,9 +281,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Atlas Tech",
     category: "3D",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
-    alt: "A photoreal 3D render of matte violet headphones on a warm gradient backdrop",
+    image: "/placeholder.jpg",
+    alt: "Atlas headphones 3D rendering project",
     span: "square",
   },
   {
@@ -294,9 +291,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Obsidian Studio",
     category: "Logos",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
-    alt: "A wordmark for Obsidian set in a tight serif with a single violet accent",
+    image: "/placeholder.jpg",
+    alt: "Obsidian wordmark logo project",
     span: "square",
   },
   {
@@ -305,9 +301,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Parallax",
     category: "Motion",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80",
-    alt: "A still from a motion reel — geometric shapes in violet and cyan, mid-rotation",
+    image: "/placeholder.jpg",
+    alt: "Parallax motion graphics project",
     span: "wide",
   },
   {
@@ -316,9 +311,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Fieldnotes Magazine",
     category: "Flyers",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=900&q=80",
-    alt: "An editorial print spread on cream paper with violet and amber accents",
+    image: "/placeholder.jpg",
+    alt: "Fieldnotes print mailer project",
     span: "tall",
   },
   {
@@ -327,9 +321,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Argon Capital",
     category: "Branding",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=80",
-    alt: "A clean identity system on cream paper, with a single wordmark in violet",
+    image: "/placeholder.jpg",
+    alt: "Argon brand identity project",
     span: "square",
   },
   {
@@ -338,9 +331,8 @@ export const portfolio: PortfolioItem[] = [
     client: "Northwind",
     category: "Motion",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?auto=format&fit=crop&w=900&q=80",
-    alt: "A still from a logo reveal — the word Northwind drawing itself in violet light",
+    image: "/placeholder.jpg",
+    alt: "Northwind logo reveal project",
     span: "square",
   },
 ];

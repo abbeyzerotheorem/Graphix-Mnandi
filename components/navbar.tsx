@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { nav, site } from "@/data/site";
@@ -47,13 +48,13 @@ export function Navbar() {
           aria-label={`${site.name} home`}
           className="group flex items-center gap-2.5"
         >
-          <span
-            aria-hidden
-            className="relative inline-flex h-7 w-7 items-center justify-center overflow-hidden rounded-md bg-[rgb(var(--accent))]"
-          >
-            <span className="absolute inset-0 grid place-items-center text-sm font-semibold text-white">G</span>
-            <span className="absolute inset-y-0 right-0 w-1.5 bg-[rgb(var(--warm))] transition-transform duration-500 group-hover:scale-y-110" />
-          </span>
+          <Image
+            src="/logo.png"
+            alt={site.name}
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-md object-contain"
+          />
           <span className="font-display text-lg tracking-tight">{site.name}</span>
         </Link>
 

@@ -44,8 +44,8 @@ export function About() {
             className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-[rgb(var(--line))] sm:aspect-[5/4] lg:aspect-[4/5]"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
-              alt="A senior designer reviewing print proofs on a large studio table"
+              src="/placeholder.jpg"
+              alt="Graphix Mnandi studio workspace"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover"

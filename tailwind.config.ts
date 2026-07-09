@@ -26,15 +26,10 @@ const config: Config = {
           DEFAULT: "#F5F2EC",
           dim: "#BFB9AE",
         },
-        violet: {
-          DEFAULT: "#7C3AED",
-          glow: "#9F6BFF",
-        },
-        cyan: {
-          DEFAULT: "#06B6D4",
-        },
-        amber: {
-          glow: "#F5C76A",
+        accent: {
+          DEFAULT: "#F29E00",
+          glow: "#FFB833",
+          deep: "#E08A00",
         },
       },
       fontFamily: {
